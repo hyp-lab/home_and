@@ -1,0 +1,7 @@
+{
+  "name": "home_and",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

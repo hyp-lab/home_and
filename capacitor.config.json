@@ -1,0 +1,6 @@
+{
+  "appId": "com.home.app",
+  "appName": "home_rcu",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
