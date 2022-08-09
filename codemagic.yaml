@@ -5,7 +5,7 @@ workflows:
         working_directory: android
         script: ./gradlew assembleRelease
     artifacts:
-      - app/build/outputs/**/**/*.apk
+      - app/build/outputs/debug/apk/debug.apk
     publishing:
       # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
       email:
