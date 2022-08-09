@@ -6,3 +6,10 @@ workflows:
         script: ./gradlew assembleRelease
     artifacts:
       - app/build/outputs/**/**/*.apk
+      publishing:
+  email:
+    recipients:
+      - arnaud.malka@hyperpanel.com
+    notify:
+      success: false # To not receive a notification when a build succeeds
+      failure: false # To not receive a notification when a build fails
