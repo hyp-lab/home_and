@@ -6,10 +6,12 @@ workflows:
         script: ./gradlew assembleRelease
     artifacts:
       - app/build/outputs/**/**/*.apk
-      publishing:
-  email:
-    recipients:
-      - arnaud.malka@hyperpanel.com
-    notify:
-      success: false # To not receive a notification when a build succeeds
-      failure: false # To not receive a notification when a build fails
+    publishing:
+      # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
+      email:
+        recipients:
+          - user_1@example.com
+          - user_2@example.com
+        notify:
+          success: true # To not receive a notification when a build succeeds
+          failure: false # To not receive a notification when a build fails
