@@ -1,9 +1,6 @@
 workflows:
   my-workflow:
     scripts:
-      - name: Install npm dependencies for Ionic Capacitor project
-        script: |
-          npm install
       - name: Set Android SDK location
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
