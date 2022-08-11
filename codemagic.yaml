@@ -1,8 +1,20 @@
 workflows:
   my-workflow:
     scripts:
-      - name: Build Android APK
-        working_directory: android
-        script: ./gradlew assembleRelease
+      - name: Set Android SDK location
+        script: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
+      - name: Build Android release
+        script: |
+          cd android
+          ./gradlew assembleRelease
     artifacts:
-      - app/build/outputs/**/**/*.apk
+      - android/app/build/outputs/**/*.apk
+    publishing:
+      # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
+      email:
+        recipients:
+          - arnaud.malka@hyperpanel.com
+        notify:
+          success: true # To not receive a notification when a build succeeds
+          failure: false # To not receive a notification when a build fails
